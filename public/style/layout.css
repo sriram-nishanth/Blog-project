@@ -1,0 +1,11 @@
+body{
+    background-image: url("../src/pexels-ann-h-45017-1762851.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+#blur{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+}
