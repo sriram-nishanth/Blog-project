@@ -1,16 +1,21 @@
-const express = require('express');
-const bodyParser = require("body-parser");
+import express from "express";
+import bodyParser from "body-parser";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const posts = [];
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(bodyParser.urlencoded({extended:true}));
-
-app.get("/",(req,res)=>{
-    res.render("index.ejs",{posts})
+app.get("/", (req, res) => {
+    res.render("index.ejs", { posts });
 });
 
 app.post("/create", (req, res) => {
@@ -23,7 +28,6 @@ app.post("/create", (req, res) => {
     console.log("Updated Posts Array:", posts);
     res.redirect("/");
 });
-
 
 app.get("/edit/:id", (req, res) => {
     const post = posts.find(p => p.id === req.params.id);
@@ -55,4 +59,4 @@ app.post("/delete/:id", (req, res) => {
 // Remove or comment out this line for Vercel:
 // app.listen(3000, () => console.log('Server running'));
 
-module.exports = app;
+export default app;
