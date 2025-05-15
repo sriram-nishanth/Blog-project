@@ -57,6 +57,6 @@ app.post("/delete/:id", (req, res) => {
 });
 
 // Remove or comment out this line for Vercel:
-// app.listen(3000, () => console.log('Server running'));
+//app.listen(3000, () => console.log('Server running'));
 
 export default app;
