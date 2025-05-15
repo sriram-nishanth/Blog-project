@@ -1,4 +1,4 @@
-import express from "express";
+const express = require('express');
 import bodyParser from "body-parser";
 
 const app = express();
@@ -52,6 +52,7 @@ app.post("/delete/:id", (req, res) => {
     res.redirect("/");
 });
 
-app.listen(port,()=>{
-    console.log(`server running ${port}`);
-});
+// Remove or comment out this line for Vercel:
+// app.listen(3000, () => console.log('Server running'));
+
+module.exports = app;
