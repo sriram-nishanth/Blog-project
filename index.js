@@ -57,8 +57,11 @@ app.post("/delete/:id", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-if (process.env.NODE_ENV !== "production") {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-export default app;
+// Remove or comment out the following lines if present:
+// if (process.env.NODE_ENV !== "production") {
+//   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// }
+
+// export default app; // <-- Remove this line for Render
