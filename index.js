@@ -1,10 +1,11 @@
 const express = require('express');
-import bodyParser from "body-parser";
+const bodyParser = require("body-parser");
 
 const app = express();
 const port = 3000;
 const posts = [];
 
+app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({extended:true}));
