@@ -15,7 +15,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs", { posts });
+    res.render("index", { posts });
 });
 
 app.post("/create", (req, res) => {
@@ -38,7 +38,7 @@ app.get("/edit/:id", (req, res) => {
     }
 
     console.log("Loading Edit Page for:", post);
-    res.render("edit.ejs", { post });
+    res.render("edit", { post });
 });
 
 app.post("/update/:id", (req, res) => {
