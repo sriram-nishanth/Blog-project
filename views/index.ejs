@@ -42,9 +42,9 @@
                         <h4 class="mb-2"><%= post.title %></h4>
                         <p><%= post.content %></p>
                         <div class="d-flex justify-content-center gap-2">
-                            <a href="/edit/<%= post.id %>" class="btn btn-warning"><img class="m-2" src="src/pencil-square.svg" alt="edit" height="20">Edit</a>
+                            <a href="/edit/<%= post.id %>" class="btn btn-warning"><img class="m-2" src="/src/pencil-square.svg" alt="edit" height="20">Edit</a>
                             <form action="/delete/<%= post.id %>" method="POST">
-                                <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><img class="m-2" src="src/trash-fill.svg" alt="delete" height="20">Delete</button>
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><img class="m-2" src="/src/trash-fill.svg" alt="delete" height="20">Delete</button>
                             </form>
                         </div>
                     </div>
